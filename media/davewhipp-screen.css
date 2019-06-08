@@ -3,6 +3,14 @@
    License: none (public domain)
 */
 
+:root {
+	--text-section-color: #bc412b;
+	--date-color: #aaa;
+	--icon-color: #60be86;
+	--link-hover-color: #39f;
+	--img-border-header-color: black;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,6 +57,44 @@ table {
 
 /* end of reset */
 
+header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+header h1 {
+	left: initial;
+}
+header > p {
+	left: initial;
+	display: flex;
+	justify-content: center
+}
+header > p > img {
+	width: 200px;
+	border: 1px solid var(--img-border-header-color);
+	border-radius: 50%;
+}
+header > p > a {
+	margin: 0 0.5em;
+}
+header > p > a:before {
+	content: '[';
+}
+header > p > a:after {
+	content: ']';
+}
+
+.icons {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2em;
+}
+.icons > .icon {
+	font-size: 1.75em;
+	margin: 0.25em;
+	color: var(--icon-color);
+}
 
 
 body {
@@ -74,7 +120,7 @@ code {
 	font-size: 90%;
 	/*line-height: 1em;*/
 	font-family: Monaco,Menlo,monospace,sans-serif;
-	color: #aaa;
+	color: var(--date-color);
 }
 
 p code {
@@ -92,18 +138,9 @@ ul {
 	margin-top: -0.5em;
 }
 
-/*uncomment to get dashes in the list*/
-/*li:before {
-	content: "-";
-	position: relative;
-	left: -0.25em;
-}*/
-
 li {
-	/*second line indent*/
 	padding-left: 1.25em;
 	text-indent: -1.25em;
-	/*color: #777;*/
 }
 
 li ul {
@@ -135,7 +172,7 @@ h1+p {
 
 h2 {
 	font-size: 1.1em;
-	color: #bc412b;
+	color: var(--text-section-color);
 	margin-top: 3em;
 	position: relative;
 	top: 1.4em;
@@ -154,11 +191,10 @@ h3 {
 
 a {
 	color: inherit;
-	/*text-decoration:none*/
 }
 
 a:hover {
-	color:#39f
+	color: var(--link-hover-color)
 }
 
 #webaddress {
